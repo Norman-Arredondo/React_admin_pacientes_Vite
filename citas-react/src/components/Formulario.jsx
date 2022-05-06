@@ -1,5 +1,17 @@
+/**State o Estado en React
+ * Cuál es el estado de nuestra aplicación
+ * El estado es una variable con información relevante en nuestra aplicación de React, algunas veces el state pertenece
+ * a un componente en específico o algunas veces deseas compartirlo a lo largo de diferentes componentes
+ * Tiene que ser declarado antes del return
+ */
+import {useState, useEffect} from 'react';
+
 //Function expretion
 const Formulario = () => {
+  const [nombre, setNombre] = useState('');
+  //Const [nombre de la variable, función que modifica la variable] = useState(Valor Inicial);
+  
+
   return (
     <div className="md:w-1/2 lg:w-2/5">
       <h2 className="font-black text-3xl text-center">Seguimiento de Pacientes</h2>
@@ -23,6 +35,8 @@ const Formulario = () => {
               placeholder="Nombre de la mascota" 
               //border-2 para que aplique un borde en las 4 direcciones y w-full para que ocupe todo el ancho disponible
               className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+              value={nombre}
+              onChange={ (e) => setNombre(e.target.value)}
           />
         </div>
 
