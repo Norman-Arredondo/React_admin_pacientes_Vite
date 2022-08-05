@@ -1,10 +1,7 @@
 //Componentes van nombrados con la primer letra en mayúsculas
 //Un componente es una función
 //Function declaration
-function Header({toma1Valor}) {
-
-  const variableHeader = true;
-  toma1Valor(variableHeader)
+function Header() {
 
   return (
     <>
