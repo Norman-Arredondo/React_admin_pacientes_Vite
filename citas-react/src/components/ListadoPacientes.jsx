@@ -1,6 +1,6 @@
 import Paciente from "./Paciente";
 
-const ListadoPacientes = () => {
+const ListadoPacientes = ({pacientes}) => {
   return (
     /**h-screen -> va a forzar a que tenga cierto tamaño
      * overflow-y  osea de arriba hacia abajo
@@ -12,11 +12,14 @@ const ListadoPacientes = () => {
         <span className="text-indigo-600 font-bold">Pacientes y Citas</span>
       </p>
 
-      <Paciente />
-      <Paciente />
-      <Paciente />
-      <Paciente />
-      <Paciente />
+      {pacientes.map( paciente =>(
+          <Paciente 
+            paciente={paciente}
+          />
+      ))}
+
+      
+      
 
     </div>
   );
