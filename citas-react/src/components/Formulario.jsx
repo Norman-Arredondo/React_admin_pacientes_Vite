@@ -6,8 +6,8 @@
  */
 import { useState, useEffect } from "react";
 
-//Function expretion
-const Formulario = () => {
+
+const Formulario = ({pacientes, setPacientes}) => {
   //Const [nombre de la variable, función que modifica la variable] = useState(Valor Inicial);
   const [nombre, setNombre] = useState("");
   const [propietario, setPropietario] = useState("");
@@ -26,10 +26,26 @@ const Formulario = () => {
 
       setError(true)
       return;
-
     }
-
     setError(false)
+
+      //Construir objeto de Paciente
+    const objetoPaciente = {
+      nombre,
+      propietario,
+      email,
+      fecha,
+      sintomas
+    }
+      //console.log(objetoPaciente)
+      setPacientes([...pacientes,objetoPaciente])
+
+      //Reiniciar el form
+      setNombre('')
+      setPropietario('')
+      setEmail('')
+      setFecha('')
+      setSintomas('')
   }
 
   return (
