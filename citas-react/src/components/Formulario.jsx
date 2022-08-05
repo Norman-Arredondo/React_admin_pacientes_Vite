@@ -5,7 +5,7 @@
  * Tiene que ser declarado antes del return
  */
 import { useState, useEffect } from "react";
-
+import Error from './Error'
 
 const Formulario = ({pacientes, setPacientes}) => {
   //Const [nombre de la variable, función que modifica la variable] = useState(Valor Inicial);
@@ -63,11 +63,7 @@ const Formulario = ({pacientes, setPacientes}) => {
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
 
-          {error && (
-            <div className="bg-red-800 text-center text-white uppercase font-bold mb-3 p-3 rounded-md">
-              <p>Todos los campos son obligatorios</p>
-            </div>
-          )}
+          {error && <Error/>}
 
         <div className="mb-5">
           {/** con block va a hacer que sea un display block y tome todo el espacio disponible*/}
